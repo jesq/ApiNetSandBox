@@ -41,7 +41,9 @@ namespace ApiNetSandBox
             }
 
             app.UseHttpsRedirection();
+            
             app.UseStaticFiles();
+            
 
             app.UseRouting();
 

@@ -1,10 +1,314 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Hello Brasov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 30px;
+            margin-top: 14px;
+        }
+
+            nav a {
+                font-size: 14px;
+                display: inline-block;
+                line-height: 24px;
+                font-weight: 400;
+                color: rgb(0, 0, 0, 0.87);
+                cursor: pointer;
+                padding: 5px 6.7px;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+            nav img {
+                width: 36px;
+                padding: 5px;
+                margin: auto 7px;
+                cursor: pointer;
+            }
+
+                nav img:hover {
+                    opacity: .8;
+                }
+
+            nav button {
+                border: 1px solid #4285f4;
+                font-weight: bold;
+                outline: none;
+                background: #4285f4;
+                color: #fff;
+                padding: 7px 12px;
+                border-radius: 3px;
+                margin-left: 7px;
+                cursor: pointer;
+            }
+
+        .section-1 {
+            flex: 1;
+        }
+
+            .section-1 .logo {
+                display: block;
+                margin: 0px auto;
+                margin-top: 200px;
+            }
+
+        .s-box {
+            width: 600px;
+            margin: 0px auto;
+            position: relative;
+            margin-top: -8px;
+            text-align: center;
+        }
+
+            .s-box .s-input {
+                display: block;
+                border: 1px solid #ddd;
+                color: rgba(0, 0, 0, 0.87);
+                font-size: 16px;
+                padding: 13px;
+                padding-left: 45px;
+                border-radius: 25px;
+                width: 100%;
+                transition: box-shadow 100ms;
+                outline: none;
+            }
+
+                .s-box .s-input:hover {
+                    border: 1px solid #fff;
+                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.05), 0 0 2px rgba(0, 0, 0, 0.05), 0 0 3px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.05), 0 0 5px rgba(0, 0, 0, 0.05), 0 0 4px rgba(0, 0, 0, 0.05), 0 0 5px rgba(0, 0, 0, 0.05)
+                }
+
+            .s-box .search-icon {
+                width: 20px;
+                opacity: .4;
+                position: absolute;
+                top: 13px;
+                left: 14px;
+            }
+
+            .s-box .vs-icon {
+                width: 14px;
+                position: absolute;
+                top: 13px;
+                right: 24px;
+                cursor: pointer;
+            }
+
+            .s-box .kb-icon {
+                width: 24px;
+                position: absolute;
+                top: 10px;
+                right: 60px;
+                cursor: pointer;
+            }
+
+            .s-box .tooltiptext2 {
+                visibility: hidden;
+                width: 220px;
+                font-weight: bold;
+                font-size: 12px;
+                background-color: #2d2d2d;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+                top: 46%;
+                left: 79.7%;
+                margin-left: -60px;
+            }
+
+        .kb-icon + .tooltiptext2::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+
+        .kb-icon:hover + .tooltiptext2 {
+            visibility: visible;
+        }
+
+        .s-box .tooltiptext {
+            visibility: hidden;
+            width: 165px;
+            font-weight: bold;
+            font-size: 12px;
+            background-color: #2d2d2d;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            top: 46%;
+            left: 91.1%;
+            margin-left: -60px;
+        }
+
+        .vs-icon + .tooltiptext::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+
+        .vs-icon:hover + .tooltiptext {
+            visibility: visible;
+        }
+
+
+        .s-btn {
+            border: 1px solid transparent;
+            padding: 9px 15px;
+            color: #666;
+            font-size: 14px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: 28px;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 100ms;
+        }
+
+            .s-btn:hover {
+                border: 1px solid #aaa;
+            }
+
+        .languages {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #111;
+        }
+
+            .languages a {
+                margin-left: 5px;
+                color: #1a0dab;
+            }
+
+                .languages a:hover {
+                    text-decoration: underline;
+                }
+
+        footer {
+            background: #f2f2f2;
+        }
+
+            footer h4 {
+                color: rgba(0, 0, 0, 0.54);
+                font-size: 15px;
+                line-height: 39.5px;
+                font-weight: 400;
+                padding-left: 29px;
+                border: 1px solid #eee;
+            }
+
+            footer a {
+                color: #5f6368;
+                display: inline-block;
+                padding: 12px 11.3px;
+                font-size: 14px;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+
+        .links {
+            border-top: 1px solid #ddd;
+            display: flex;
+        }
+
+        .link-1 {
+            padding-left: 18.7px;
+            flex: 1;
+        }
+
+        .link-2 {
+            padding-right: 18.7px;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Hello Tg Mures</h1>
+    <nav>
+        <a href="#">Gmail</a>
+        <a href="#">Imagini</a>
+        <img src="img/g-menu.PNG">
+        <button>Sign In</button>
+    </nav>
+    <section class="section-1">
+        <img src="img/logo.png" class="logo">
+        <form>
+            <br><br>
+            <div class="s-box">
+                <img src="img/search.svg" class="search-icon">
+                <input type="text" class="s-input">
+                <img src="img/vs.png" class="vs-icon">
+                <span class="tooltiptext">Efectuați o căutare vocală</span>
+                <img src="img/keyboard.png" class="kb-icon">
+                <span class="tooltiptext2">Instrumente pentru introducere text</span>
+                <input type="submit" class="s-btn" value="Căutare Google">
+                <input type="submit" class="s-btn" value="Mă simt norocos">
+            </div>
+        </form>
+        <div class="languages">
+            Google oferit în:
+            <a href="#">English</a>
+            <a href="#">Magyar</a>
+            <a href="#">Deutsch</a>
+        </div>
+    </section>
+    <footer>
+        <h4>România</h4>
+        <div class="links">
+            <div class="link-1">
+                <a href="#">Despre</a>
+                <a href="#">Publicitate</a>
+                <a href="#">Companii</a>
+                <a href="#">Cum funcționează Căutarea</a>
+            </div>
+            <div class="link-2">
+                <a href="#">Confidențialitate</a>
+                <a href="#">Termeni</a>
+                <a href="#">Setări</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
