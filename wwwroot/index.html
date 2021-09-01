@@ -287,10 +287,13 @@
             </div>
         </form>
         <div class="languages">
-            Google oferit în:
+            <!--Google oferit în:
             <a href="#">English</a>
             <a href="#">Magyar</a>
-            <a href="#">Deutsch</a>
+            <a href="#">Deutsch</a>-->
+            <textarea id="weatherForecast">
+                
+            </textarea>
         </div>
     </section>
     <footer>
@@ -313,13 +316,16 @@
     <script src="./lib/jquery/dist/jquery.min.js"></script>
     <script>
         var settings = {
-            "url": "https://localhost:5001/WeatherForecast",
+            "url": "/WeatherForecast",
             "method": "GET",
             "timeout": 0,
         };
 
         $.ajax(settings).done(function (response) {
             console.log(response);
+            /*document.querySelector('#weatherForecast').value = response;*/
+            $('#weatherForecast').val("The weather for tomorrow is: " + response[0].temperatureC + ", " + response[0].summary)
+
         });
     </script>
 </body>
