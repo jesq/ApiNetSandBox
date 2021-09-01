@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "2d654cf5-04f9-40b6-98a2-f0f61f7dfd40",
+		"name": "OpenWeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Weather Forecast for 16 days",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/onecall?lat=45.657974&lon=25.601198&exclude=hourly,minutely&appid=0dfcffd1563d03d0c8e4d517f5dc8017",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"onecall"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "45.657974"
+						},
+						{
+							"key": "lon",
+							"value": "25.601198"
+						},
+						{
+							"key": "exclude",
+							"value": "hourly,minutely"
+						},
+						{
+							"key": "appid",
+							"value": "0dfcffd1563d03d0c8e4d517f5dc8017"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

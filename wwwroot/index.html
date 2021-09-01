@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google</title>
     <link rel="icon" href="img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="" />
     <style>
         * {
             padding: 0;
@@ -310,5 +310,18 @@
         </div>
     </footer>
 
+    <script src="./lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        var settings = {
+            "url": "https://localhost:5001/WeatherForecast",
+            "method": "GET",
+            "timeout": 0,
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    </script>
 </body>
+
 </html>
