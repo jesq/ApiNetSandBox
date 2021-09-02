@@ -4,6 +4,9 @@ namespace ApiNetSandBox
 {
     public class WeatherForecast
     {
+        public double Longitude { get; set; }
+
+        public double Latitude { get; set; }
         public DateTime Date { get; set; }
 
         public int TemperatureC { get; set; }

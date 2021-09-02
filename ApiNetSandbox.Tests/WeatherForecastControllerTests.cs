@@ -51,7 +51,7 @@ namespace ApiNetSandbox.Tests
         {
             var assembly = this.GetType().Assembly;
             var assemblyName = assembly.GetName().Name;
-            var resourceName = $"{assemblyName}.DataFromOpenWeatherAPI.json";
+            var resourceName = $"{assemblyName}.WeatherForecastDataFromOpenWeatherAPI.json";
             var resourceStream = assembly.GetManifestResourceStream(resourceName);
             using (var tr = new StreamReader(resourceStream))
             {
