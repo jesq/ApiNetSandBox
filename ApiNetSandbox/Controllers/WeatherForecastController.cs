@@ -13,16 +13,7 @@ namespace ApiNetSandBox.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private const float KELVIN_CONST = 273.15f;
-
-        public WeatherForecastController()
-        {
-        }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
@@ -34,16 +25,6 @@ namespace ApiNetSandBox.Controllers
             Console.WriteLine(response.Content);
 
             return ConvertResponseToWeatherForecast(response.Content);
-
-            //var rng = new Random();
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            //{
-            //    Date = DateTime.Now.AddDays(index),
-            //    TemperatureC = rng.Next(-20, 55),
-            //    Summary = Summaries[rng.Next(Summaries.Length)]
-            //})
-            //.ToArray();
-            //https://api.openweathermap.org/data/2.5/onecall?lat=45.657974&lon=25.601198&exclude=hourly,minutely&appid=0dfcffd1563d03d0c8e4d517f5dc8017
         }
 
         public IEnumerable<WeatherForecast> ConvertResponseToWeatherForecast(string content, int numberOfDays = 5)
