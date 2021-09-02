@@ -23,7 +23,8 @@ namespace ApiNetSandbox.Tests
             // Assert
             var weatherForecastForTomorrow = ((WeatherForecast[])output)[0];
             Assert.Equal("Rain", weatherForecastForTomorrow.Summary);
-            Assert.Equal(16, weatherForecastForTomorrow.TemperatureC);
+            Assert.Equal(13, weatherForecastForTomorrow.TemperatureC);
+           
         }
     }
 }
