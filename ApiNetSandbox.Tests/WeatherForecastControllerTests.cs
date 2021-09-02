@@ -40,9 +40,9 @@ namespace ApiNetSandbox.Tests
 
 
             // Assert
-            var weatherForecastForAfterTomorrow = ((WeatherForecast[])output)[0];
+            var weatherForecastForAfterTomorrow = ((WeatherForecast[])output)[1];
             Assert.Equal("Clear", weatherForecastForAfterTomorrow.Summary);
-            Assert.Equal(18, weatherForecastForAfterTomorrow.TemperatureC);
+            Assert.Equal(20, weatherForecastForAfterTomorrow.TemperatureC);
             Assert.Equal(new DateTime(2021, 9, 4), weatherForecastForAfterTomorrow.Date);
         }
     }
