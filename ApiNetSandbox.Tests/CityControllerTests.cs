@@ -15,7 +15,7 @@ namespace ApiNetSandbox.Tests
         {
             // Assume
             string content = LoadJsonFromResource();
-            var controller = new WeatherForecastController();
+            var controller = new CurrentWeatherController();
 
 
             // Act
