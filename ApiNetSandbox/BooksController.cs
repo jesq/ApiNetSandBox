@@ -17,11 +17,21 @@ namespace ApiNetSandBox
         public BooksController()
         {
             books = new Book[2];
-            books[0] = new Book();
-            books[0].Id = 0;
-            books[0].Title = "Az isteni formula";
-            books[0].Language = "Hungarian";
-            books[0].Author = "Jose Rodrigues dos Santos";
+            books[0] = new Book
+            {
+                Id = 1,
+                Title = "Az isteni formula",
+                Language = "Hungarian",
+                Author = "Jose Rodrigues dos Santos"
+            };
+
+            books[1] = new Book
+            {
+                Id = 2,
+                Title = "Deep Work",
+                Language = "English",
+                Author = "Cal Newport"
+            };
         }
         // GET: api/<BooksController>
         [HttpGet]
