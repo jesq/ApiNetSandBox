@@ -33,6 +33,11 @@ namespace ApiNetSandBox
                 Author = "Cal Newport"
             };
         }
+        private bool SomeFunction(Book book)
+        {
+            return book.Id == 1;
+        }
+
         // GET: api/<BooksController>
         [HttpGet]
         public IEnumerable<Book> Get()
@@ -42,9 +47,9 @@ namespace ApiNetSandBox
 
         // GET api/<BooksController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Book Get(int id)
         {
-            return "value";
+            return books.Single(SomeFunction);
         }
 
         // POST api/<BooksController>
