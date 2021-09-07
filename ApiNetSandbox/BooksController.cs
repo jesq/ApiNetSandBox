@@ -67,6 +67,7 @@ namespace ApiNetSandBox
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            books.Remove(Get(id));
         }
     }
 }
