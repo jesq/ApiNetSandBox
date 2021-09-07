@@ -12,26 +12,26 @@ namespace ApiNetSandBox
     [ApiController]
     public class BooksController : ControllerBase
     {
-        private Book[] books;
+        private List<Book> books;
 
         public BooksController()
         {
-            books = new Book[2];
-            books[0] = new Book
+            books = new List<Book>();
+            books.Add(new Book
             {
                 Id = 1,
                 Title = "Az isteni formula",
                 Language = "Hungarian",
                 Author = "Jose Rodrigues dos Santos"
-            };
+            });
 
-            books[1] = new Book
+            books.Add(new Book
             {
                 Id = 2,
                 Title = "Deep Work",
                 Language = "English",
                 Author = "Cal Newport"
-            };
+            });
         }
         // GET: api/<BooksController>
         [HttpGet]
@@ -49,14 +49,18 @@ namespace ApiNetSandBox
 
         // POST api/<BooksController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Book value)
         {
+            int id = books.Count + 1;
+            value.Id = id;
+            books.Add(value);
         }
 
         // PUT api/<BooksController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
+
         }
 
         // DELETE api/<BooksController>/5
