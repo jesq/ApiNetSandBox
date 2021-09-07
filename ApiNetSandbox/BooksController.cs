@@ -12,48 +12,33 @@ namespace ApiNetSandBox
     [ApiController]
     public class BooksController : ControllerBase
     {
-        static List<Book> books;
+        private readonly IBooksService booksService;
 
-        static BooksController()
+        public BooksController(IBooksService booksService)
         {
-            books = new List<Book>();
-            books.Add(new Book
-            {
-                Id = 1,
-                Title = "Az isteni formula",
-                Language = "Hungarian",
-                Author = "Jose Rodrigues dos Santos"
-            });
-
-            books.Add(new Book
-            {
-                Id = 2,
-                Title = "Deep Work",
-                Language = "English",
-                Author = "Cal Newport"
-            });
+            this.booksService = booksService;
         }
+
+    
         // GET: api/<BooksController>
         [HttpGet]
         public IEnumerable<Book> Get()
         {
-            return books;
+            return booksService.Get();
         }
 
         // GET api/<BooksController>/5
         [HttpGet("{id}")]
         public Book Get(int id)
         {
-            return books.Single(book => book.Id == id);
+            return booksService.Get(id);
         }
 
         // POST api/<BooksController>
         [HttpPost]
         public void Post([FromBody] Book value)
         {
-            int id = books.Count + 1;
-            value.Id = id;
-            books.Add(value);
+            booksService.Post(value);
         }
 
         // PUT api/<BooksController>/5
@@ -67,7 +52,7 @@ namespace ApiNetSandBox
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            books.Remove(Get(id));
+            booksService.Delete(id);
         }
     }
 }
