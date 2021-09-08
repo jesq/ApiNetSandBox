@@ -7,14 +7,25 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 
+
+
 namespace ApiNetSandBox.Controllers
 {
+    /// <summary>
+    /// Controller that allows us to get weather forecast.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private const float KELVIN_CONST = 273.15f;
 
+        /// <summary>
+        /// Getting weather forecast for 5 days.
+        /// </summary>
+        /// <returns>
+        /// Enumerable of weather forecast objects.
+        /// </returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

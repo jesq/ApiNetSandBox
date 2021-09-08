@@ -19,10 +19,8 @@ namespace ApiNetSandbox.Tests
             string content = LoadJsonFromResource();
             var controller = new WeatherForecastController();
 
-
             // Act
             var output = controller.ConvertResponseToWeatherForecast(content);
-
 
             // Assert
             var weatherForecastForTomorrow = ((WeatherForecast[])output)[0];
@@ -38,10 +36,8 @@ namespace ApiNetSandbox.Tests
             string content = LoadJsonFromResource();
             var controller = new WeatherForecastController();
 
-
             // Act
             var output = controller.ConvertResponseToWeatherForecast(content);
-
 
             // Assert
             var weatherForecastForAfterTomorrow = ((WeatherForecast[])output)[1];
