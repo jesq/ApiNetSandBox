@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiNetSandBox", "ApiNetSand
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiNetSandbox.Tests", "ApiNetSandbox.Tests\ApiNetSandbox.Tests.csproj", "{59F77C4D-5337-4892-B47C-5A19D4437981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockerSandbox", "DockerSandbox\DockerSandbox.csproj", "{1F4DAAD9-3565-41B2-9DF4-1C0E97986822}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DockerSandbox", "DockerSandbox\DockerSandbox.csproj", "{1F4DAAD9-3565-41B2-9DF4-1C0E97986822}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1D363E0F-12A5-4A65-86DC-74D325C8A16E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

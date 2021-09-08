@@ -7,6 +7,9 @@ using Xunit;
 
 namespace ApiNetSandbox.Tests
 {
+    /// <summary>
+    /// This is a test suite used for WeatherForecast Controller.
+    /// </summary>
     public class WeatherForecastControllerTests
     {
         [Fact]
