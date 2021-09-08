@@ -4,10 +4,10 @@ namespace ApiNetSandBox
 {
     public interface IBooksService
     {
-        void Delete(int id);
         IEnumerable<Book> Get();
         Book Get(int id);
-        void Post(Book value);
-        void Put(int id, string value);
+        void Add(Book value);
+        void Delete(int id);
+        void Update(int id, Book value);
     }
 }

@@ -20,14 +20,14 @@ namespace ApiNetSandbox.Tests
 
 
             // Act
-            booksService.Post(new Book
+            booksService.Add(new Book
             {
                 Title = "Test Book Nr1",
                 Language = "English",
                 Author = "Some Author"
             });
             booksService.Delete(2);
-            booksService.Post(new Book
+            booksService.Add(new Book
             {
                 Title = "Test Book Nr2",
                 Language = "English",
